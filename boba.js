@@ -1,3 +1,15 @@
+//.filter +
+// .find 
+// .findIndex
+// .map
+// .forEach
+// .includes
+// .indexOf
+// .every
+// .some
+// .sort
+// Spread
+
 // var arr = ['boba', 'biba', 'kaka']
 
 // arr.push('popa')
@@ -151,12 +163,50 @@
 
 //--------------------------------------------------------------------------------------------------
 
-const ages = [32, 33, 16, 40, 102, 8, 30];
+// const ages = [32, 33, 16, 40, 102, 8, 30];
+
+// function checkAge(age) {
+//    return age > 18
+// }
+
+// const result = ages.filter(checkAge)
+
+// console.log(result)
+
+//-----------------------------------------------------------------------------------------------------
+
+const ages = [34, 100, 54, 99, 12, 22, 30]
 
 function checkAge(age) {
-   return age > 18
+    age < 18;
 }
 
-const result = ages.filter(checkAge)
+// function find(age, fun) {
 
-console.log(result)
+//     result = ''
+
+//     for(i = 0; result == ''; i++) {
+    
+//         if(fun(age[i]) == true) {
+//             result = result + age[i]
+//         }
+        
+//     }
+//     return result   
+// }    
+
+function find(age, fun) {
+
+    result = ''
+    i = 0
+    if(fun(age[i]) == true) {
+        result = result + age[i]
+    } do {
+        i++
+    } while(result == '')
+
+   result = age[i]
+
+}
+
+console.log(find(ages, checkAge))
