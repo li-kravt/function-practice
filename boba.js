@@ -1,7 +1,7 @@
 //.filter +
 // .find +
 // .findIndex +
-// .map
+// .map 
 // .forEach
 // .includes
 // .indexOf
@@ -214,23 +214,46 @@
 
 //--------------------------------------------------------------------------------------
 
-const ages = [34, 100, 4, 54, 99, 12, 22, 30, 4,]
+// const ages = [34, 100, 4, 54, 99, 12, 22, 30, 4,]
 
-function checkAge(age) {
-    return age < 18
+// function checkAge(age) {
+//     return age < 18
+// }
+
+// function findIndex(arr, func) {
+    
+//     res = ''
+
+//     for(var i = 0; res == ''; i++) {
+//         if(func(arr[i]) == true) 
+//             res = i
+//     }
+//     return res
+// }
+
+// console.log(findIndex(ages, checkAge))
+
+//--------------------------------------------------------------------------------------------
+
+const numbers = [34, 100, 4, 54, 99]
+
+function calc(numb) {
+    return numb * 10
 }
 
-function findIndex(arr, func) {
-    
-    res = ''
+// console.log(numbers.map(calc))
 
-    for(var i = 0; res == ''; i++) {
-        if(func(arr[i]) == true) 
-            res = i
+function map(arr, func) {
+    
+    res = []
+
+    for(i = 0; i < arr.length; i++) {
+      res[i] = func(arr[i])
     }
+
     return res
 }
 
-console.log(findIndex(ages, checkAge))
+console.log(map(numbers, calc))
 
-//--------------------------------------------------------------------------------------------
+
