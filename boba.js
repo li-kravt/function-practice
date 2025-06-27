@@ -1,6 +1,6 @@
 //.filter +
-// .find 
-// .findIndex
+// .find +
+// .findIndex +
 // .map
 // .forEach
 // .includes
@@ -175,28 +175,28 @@
 
 //-----------------------------------------------------------------------------------------------------
 
-const ages = [34, 100, 54, 8, 99, 12, 22, 30, 4,]
+// const ages = [34, 100, 54, 8, 99, 12, 22, 30, 4,]
 
-function checkAge(age) {
-    res = age < 18;
-    return res
-}
+// function checkAge(age) {
+//     res = age < 18;
+//     return res
+// }
 
-function find(age, fun) {
+// function find(age, fun) {
+ 
+//     result = ''
 
-    result = ''
-
-    for(i = 0; result == ''; i++) {
+//     for(i = 0; result == ''; i++) {
     
-        if(fun(age[i]) == true) {
-            result = result + age[i]
-        }
+//         if(fun(age[i]) == true) {
+//             result = result + age[i]
+//         }
         
-    }
-    return result   
-}    
+//     }
+//     return result   
+// }    
 
-console.log(find(ages, checkAge))
+// console.log(find(ages, checkAge))
 
 // function find(age, fun) {
 
@@ -212,3 +212,25 @@ console.log(find(ages, checkAge))
 
 // }
 
+//--------------------------------------------------------------------------------------
+
+const ages = [34, 100, 4, 54, 99, 12, 22, 30, 4,]
+
+function checkAge(age) {
+    return age < 18
+}
+
+function findIndex(arr, func) {
+    
+    res = ''
+
+    for(var i = 0; res == ''; i++) {
+        if(func(arr[i]) == true) 
+            res = i
+    }
+    return res
+}
+
+console.log(findIndex(ages, checkAge))
+
+//--------------------------------------------------------------------------------------------
