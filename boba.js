@@ -1,7 +1,7 @@
 //.filter +
 // .find +
 // .findIndex +
-// .map 
+// .map +
 // .forEach
 // .includes
 // .indexOf
@@ -235,25 +235,56 @@
 
 //--------------------------------------------------------------------------------------------
 
-const numbers = [34, 100, 4, 54, 99]
+// const numbers = [34, 100, 4, 54, 99]
 
-function calc(numb) {
-    return numb * 10
+// function calc(numb) {
+//     return numb * 10
+// }
+
+// // console.log(numbers.map(calc))
+
+// function map(arr, func) {
+    
+//     res = []
+
+//     for(i = 0; i < arr.length; i++) {
+//       res[i] = func(arr[i])
+//     }
+
+//     return res
+// }
+
+// console.log(map(numbers, calc))
+
+//----------------------------------------------------------------------------------------------------
+
+const numbers = [4, 9, 16, 25];
+// const newArray = numbers.map(Math.sqrt)
+
+// console.log(newArray)
+
+function root(num) {
+    return Math.sqrt(num)
 }
-
-// console.log(numbers.map(calc))
 
 function map(arr, func) {
-    
-    res = []
-
+    result = []
     for(i = 0; i < arr.length; i++) {
-      res[i] = func(arr[i])
+        result[i] = func(arr[i])
     }
-
-    return res
+    return result
 }
 
-console.log(map(numbers, calc))
+console.log(map(numbers, root))
 
 
+
+function mapSq(arr) {
+    result = []
+    for(i = 0; i < arr.length; i++) {
+        result[i] = Math.sqrt(arr[i])
+    }
+    return result
+}
+
+console.log(mapSq(numbers))
