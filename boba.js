@@ -175,38 +175,40 @@
 
 //-----------------------------------------------------------------------------------------------------
 
-const ages = [34, 100, 54, 99, 12, 22, 30]
+const ages = [34, 100, 54, 8, 99, 12, 22, 30, 4,]
 
 function checkAge(age) {
-    age < 18;
+    res = age < 18;
+    return res
 }
-
-// function find(age, fun) {
-
-//     result = ''
-
-//     for(i = 0; result == ''; i++) {
-    
-//         if(fun(age[i]) == true) {
-//             result = result + age[i]
-//         }
-        
-//     }
-//     return result   
-// }    
 
 function find(age, fun) {
 
     result = ''
-    i = 0
-    if(fun(age[i]) == true) {
-        result = result + age[i]
-    } do {
-        i++
-    } while(result == '')
 
-   result = age[i]
-
-}
+    for(i = 0; result == ''; i++) {
+    
+        if(fun(age[i]) == true) {
+            result = result + age[i]
+        }
+        
+    }
+    return result   
+}    
 
 console.log(find(ages, checkAge))
+
+// function find(age, fun) {
+
+//     result = ''
+//     i = 0
+//     if(fun(age[i]) == true) {
+//         result = result + age[i]
+//     } do {
+//         i++
+//     } while(result == '')
+
+//    result = age[i]
+
+// }
+
