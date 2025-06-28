@@ -258,33 +258,57 @@
 
 //----------------------------------------------------------------------------------------------------
 
-const numbers = [4, 9, 16, 25];
-// const newArray = numbers.map(Math.sqrt)
+// const numbers = [4, 9, 16, 25];
+// // const newArray = numbers.map(Math.sqrt)
 
-// console.log(newArray)
+// // console.log(newArray)
 
-function root(num) {
-    return Math.sqrt(num)
+// function root(num) {
+//     return Math.sqrt(num)
+// }
+
+// function map(arr, func) {
+//     result = []
+//     for(i = 0; i < arr.length; i++) {
+//         result[i] = func(arr[i])
+//     }
+//     return result
+// }
+
+// console.log(map(numbers, root))
+
+
+
+// function mapSq(arr) {
+//     result = []
+//     for(i = 0; i < arr.length; i++) {
+//         result[i] = Math.sqrt(arr[i])
+//     }
+//     return result
+// }
+
+// console.log(mapSq(numbers))
+
+//-------------------------------------------------------------------------------------------------------
+
+const fruits = ["apple", "orange", "cherry"];
+
+let text = ""
+
+function myFunc(index, item) {
+    text += index + ": " + item + "; ";
 }
 
-function map(arr, func) {
-    result = []
+// fruits.forEach(myFunc)
+
+// console.log(text)
+
+function forEch(arr, func) {
     for(i = 0; i < arr.length; i++) {
-        result[i] = func(arr[i])
+        func(i, arr[i])
     }
-    return result
 }
 
-console.log(map(numbers, root))
+forEch(fruits, myFunc)
 
-
-
-function mapSq(arr) {
-    result = []
-    for(i = 0; i < arr.length; i++) {
-        result[i] = Math.sqrt(arr[i])
-    }
-    return result
-}
-
-console.log(mapSq(numbers))
+console.log(text)
