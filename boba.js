@@ -316,20 +316,57 @@
 
 //---------------------------------------------------------------------------------------------------------
 
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
-// console.log(fruits.includes("Banana"))
+// const fruits = ["Banana", "Orange", "Apple", "Mango"];
+// // console.log(fruits.includes("Banana"))
 
-function includs(arr, item) {
+// function includs(arr, item) {
     
-    result = false
+//     result = false
 
-    for(i = 0; i < arr.length; i++) {
-        if(item == arr[i]) {
-            result = true
+//     for(i = 0; i < arr.length; i++) {
+//         if(item == arr[i]) {
+//             result = true
+//         }
+//     }
+
+//     return result
+// }
+
+// console.log(includs(fruits, "Apple"))
+
+//-------------------------------------------------------------------------------------------------------------
+
+const fruits = ["Apple", "Orange", "Apple", "Mango", "Apple"];
+// let index = fruits.lastIndexOf("Apple")
+
+function lastIndex(arr, item) {
+    result = -1
+
+    for(i = arr.length - 1; result == -1; i--) {
+        if(arr[i] == item) {
+            result = i
+        }
+        if(i < 0) {
+            break
         }
     }
+    
+    return result
+    
+}
 
+console.log(lastIndex(fruits, "Apple"))
+
+function lastIndexStart(arr, item) {
+    result = -1
+
+    for(i = 0; i < arr.length; i++) {
+        if(arr[i] == item) {
+            result = i
+        }
+    }
+    
     return result
 }
 
-console.log(includs(fruits, "Apple"))
+console.log(lastIndexStart(fruits, "Apple"))
