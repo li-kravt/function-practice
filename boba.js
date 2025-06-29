@@ -2,13 +2,14 @@
 // .find +
 // .findIndex +
 // .map +
-// .forEach
-// .includes
+// .forEach+
+// .includes +
 // .indexOf
 // .every
 // .some
 // .sort
 // Spread
+// reduce
 
 // var arr = ['boba', 'biba', 'kaka']
 
@@ -291,24 +292,44 @@
 
 //-------------------------------------------------------------------------------------------------------
 
-const fruits = ["apple", "orange", "cherry"];
+// const fruits = ["apple", "orange", "cherry"];
 
-let text = ""
+// let text = ""
 
-function myFunc(index, item) {
-    text += index + ": " + item + "; ";
-}
+// function myFunc(index, item) {
+//     text += index + ": " + item + "; ";
+// }
 
-// fruits.forEach(myFunc)
+// // fruits.forEach(myFunc)
+
+// // console.log(text)
+
+// function forEch(arr, func) {
+//     for(i = 0; i < arr.length; i++) {
+//         func(i, arr[i])
+//     }
+// }
+
+// forEch(fruits, myFunc)
 
 // console.log(text)
 
-function forEch(arr, func) {
+//---------------------------------------------------------------------------------------------------------
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+// console.log(fruits.includes("Banana"))
+
+function includs(arr, item) {
+    
+    result = false
+
     for(i = 0; i < arr.length; i++) {
-        func(i, arr[i])
+        if(item == arr[i]) {
+            result = true
+        }
     }
+
+    return result
 }
 
-forEch(fruits, myFunc)
-
-console.log(text)
+console.log(includs(fruits, "Apple"))
