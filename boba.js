@@ -4,8 +4,8 @@
 // .map +
 // .forEach+
 // .includes +
-// .indexOf
-// .every
+// .indexOf +
+// .every +
 // .some
 // .sort
 // Spread
@@ -336,37 +336,60 @@
 
 //-------------------------------------------------------------------------------------------------------------
 
-const fruits = ["Apple", "Orange", "Apple", "Mango", "Apple"];
-// let index = fruits.lastIndexOf("Apple")
+// const fruits = ["Apple", "Orange", "Apple", "Mango", "Apple"];
+// // let index = fruits.lastIndexOf("Apple")
 
-function lastIndex(arr, item) {
-    result = -1
+// function lastIndex(arr, item) {
+//     result = -1
 
-    for(i = arr.length - 1; result == -1; i--) {
-        if(arr[i] == item) {
-            result = i
-        }
-        if(i < 0) {
-            break
-        }
-    }
+//     for(i = arr.length - 1; result == -1; i--) {
+//         if(arr[i] == item) {
+//             result = i
+//         }
+//         if(i < 0) {
+//             break
+//         }
+//     }
     
-    return result
+//     return result
     
+// }
+
+// console.log(lastIndex(fruits, "Apple"))
+
+// function lastIndexStart(arr, item) {
+//     result = -1
+
+//     for(i = 0; i < arr.length; i++) {
+//         if(arr[i] == item) {
+//             result = i
+//         }
+//     }
+    
+//     return result
+// }
+
+// console.log(lastIndexStart(fruits, "Apple"))
+
+//---------------------------------------------------------------------------------------------------
+
+const ages = [21, 89, 22, 30, 38]
+
+function checkAge(age) {
+    return age > 17
 }
 
-console.log(lastIndex(fruits, "Apple"))
+// console.log(ages.every(checkAge))
 
-function lastIndexStart(arr, item) {
-    result = -1
+function everyMy(arr, func) {
+    result = true
 
-    for(i = 0; i < arr.length; i++) {
-        if(arr[i] == item) {
-            result = i
+    for(i = 0; i < arr.length; i++)
+        if(func(arr[i]) !== true) {
+            result = false
         }
-    }
-    
+
     return result
 }
 
-console.log(lastIndexStart(fruits, "Apple"))
+console.log(everyMy(ages, checkAge))
