@@ -6,7 +6,7 @@
 // .includes +
 // .indexOf +
 // .every +
-// .some
+// .some + 
 // .sort
 // Spread
 // reduce
@@ -373,23 +373,48 @@
 
 //---------------------------------------------------------------------------------------------------
 
-const ages = [21, 89, 22, 30, 38]
+// const ages = [21, 89, 22, 30, 38]
 
-function checkAge(age) {
+// function checkAge(age) {
+//     return age > 17
+// }
+
+// // console.log(ages.every(checkAge))
+
+// function everyMy(arr, func) {
+//     result = true
+
+//     for(i = 0; i < arr.length; i++)
+//         if(func(arr[i]) !== true) {
+//             result = false
+//         }
+
+//     return result
+// }
+
+// console.log(everyMy(ages, checkAge))
+
+//-------------------------------------------------------------------------------------------------------
+
+const ages = [3, 10, 18, 22]
+ 
+function checkAdult(age) {
     return age > 17
 }
+ 
+// console.log(ages.some(checkAdult))
 
-// console.log(ages.every(checkAge))
+function some(arr, func) {
+    result = false
 
-function everyMy(arr, func) {
-    result = true
-
-    for(i = 0; i < arr.length; i++)
-        if(func(arr[i]) !== true) {
-            result = false
+    for(i = 0; i < arr.length; i++){
+        if(func(arr[i])) {
+            result = true
+            break
         }
+    }
 
     return result
 }
 
-console.log(everyMy(ages, checkAge))
+console.log(some(ages, checkAdult))
