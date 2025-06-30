@@ -7,7 +7,7 @@
 // .indexOf +
 // .every +
 // .some + 
-// .sort
+// .sort +
 // Spread
 // reduce
 
@@ -396,25 +396,135 @@
 
 //-------------------------------------------------------------------------------------------------------
 
-const ages = [3, 10, 18, 22]
+// const ages = [3, 10, 18, 22]
  
-function checkAdult(age) {
-    return age > 17
-}
+// function checkAdult(age) {
+//     return age > 17
+// }
  
-// console.log(ages.some(checkAdult))
+// // console.log(ages.some(checkAdult))
 
-function some(arr, func) {
-    result = false
+// function some(arr, func) {
+//     result = false
 
-    for(i = 0; i < arr.length; i++){
-        if(func(arr[i])) {
-            result = true
-            break
+//     for(i = 0; i < arr.length; i++){
+//         if(func(arr[i])) {
+//             result = true
+//             break
+//         }
+//     }
+
+//     return result
+// }
+
+// console.log(some(ages, checkAdult))
+
+//-----------------------------------------------------------------------------------------------------
+
+// const fruits = ["Banana", "Orange", "Apple", "Mango"]
+
+// console.log(fruits.sort())
+
+// У тебя есть такой массив работников и тебе нужно отсортировать его в 
+// алфавитном порядке, но при этом соблюдая иерархию (Сначала CEO, потом Manager, а затем Worker)
+
+// Также есть поле isWorking, которое означает, работает ли еще этот человек или уволился. 
+// Все не работающие сотрудники должны попадать в самый конец списка, 
+// но при этом алфавитный порядок их имен и иерархия должны соблюдаться
+
+const workers =
+[
+    {
+      "name": "John",
+      "position": "Worker",
+      "isWorking": true
+    },
+    {
+      "name": "William",
+      "position": "Worker",
+      "isWorking": false
+    },
+    {
+      "name": "Abraham",
+      "position": "Manager",
+      "isWorking": false
+    },
+    {
+      "name": "James",
+      "position": "Manager",
+      "isWorking": true
+    },
+    {
+      "name": "Elon",
+      "position": "CEO",
+      "isWorking": true
+    },
+    {
+      "name": "Hoxton",
+      "position": "Worker",
+      "isWorking": true
+    },
+    {
+      "name": "Gregor",
+      "position": "Worker",
+      "isWorking": true
+    },
+    {
+      "name": "Casey",
+      "position": "Worker",
+      "isWorking": false
+    },
+    {
+      "name": "Charles",
+      "position": "Worker",
+      "isWorking": true
+    },
+    {
+      "name": "Richard",
+      "position": "Worker",
+      "isWorking": false
+    },
+    {
+      "name": "Leo",
+      "position": "Worker",
+      "isWorking": true
+    },
+    {
+      "name": "Leo",
+      "position": "Manager",
+      "isWorking": true
+    },
+    {
+      "name": "Charlie",
+      "position": "Manager",
+      "isWorking": true
+    },
+  ]
+ 
+function index(arr) {
+    // result = []
+
+    for(i = 0; i < arr.length; i++) {
+        if(arr[i].position == "CEO") {
+            arr[i].index = 5
         }
-    }
+        if(arr[i].position == "Manager") {
+            arr[i].index = 10
+        }
+        if(arr[i].position == "Worker") {
+            arr[i].index = 15
+        }
 
-    return result
+        // result[i] = arr[i]
+    }
+    
 }
 
-console.log(some(ages, checkAdult))
+index(workers)
+  
+
+workers.sort((a, b) => a.name.localeCompare(b.name))
+workers.sort((a, b) => a.index - b.index)
+workers.sort((a, b) => b.isWorking - a.isWorking) 
+
+console.log(workers)
