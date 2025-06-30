@@ -8,7 +8,7 @@
 // .every +
 // .some + 
 // .sort +
-// Spread
+// Spread 
 // reduce
 
 // var arr = ['boba', 'biba', 'kaka']
@@ -432,99 +432,124 @@
 // Все не работающие сотрудники должны попадать в самый конец списка, 
 // но при этом алфавитный порядок их имен и иерархия должны соблюдаться
 
-const workers =
-[
-    {
-      "name": "John",
-      "position": "Worker",
-      "isWorking": true
-    },
-    {
-      "name": "William",
-      "position": "Worker",
-      "isWorking": false
-    },
-    {
-      "name": "Abraham",
-      "position": "Manager",
-      "isWorking": false
-    },
-    {
-      "name": "James",
-      "position": "Manager",
-      "isWorking": true
-    },
-    {
-      "name": "Elon",
-      "position": "CEO",
-      "isWorking": true
-    },
-    {
-      "name": "Hoxton",
-      "position": "Worker",
-      "isWorking": true
-    },
-    {
-      "name": "Gregor",
-      "position": "Worker",
-      "isWorking": true
-    },
-    {
-      "name": "Casey",
-      "position": "Worker",
-      "isWorking": false
-    },
-    {
-      "name": "Charles",
-      "position": "Worker",
-      "isWorking": true
-    },
-    {
-      "name": "Richard",
-      "position": "Worker",
-      "isWorking": false
-    },
-    {
-      "name": "Leo",
-      "position": "Worker",
-      "isWorking": true
-    },
-    {
-      "name": "Leo",
-      "position": "Manager",
-      "isWorking": true
-    },
-    {
-      "name": "Charlie",
-      "position": "Manager",
-      "isWorking": true
-    },
-  ]
+// const workers =
+// [
+//     {
+//       "name": "John",
+//       "position": "Worker",
+//       "isWorking": true
+//     },
+//     {
+//       "name": "William",
+//       "position": "Worker",
+//       "isWorking": false
+//     },
+//     {
+//       "name": "Abraham",
+//       "position": "Manager",
+//       "isWorking": false
+//     },
+//     {
+//       "name": "James",
+//       "position": "Manager",
+//       "isWorking": true
+//     },
+//     {
+//       "name": "Elon",
+//       "position": "CEO",
+//       "isWorking": true
+//     },
+//     {
+//       "name": "Hoxton",
+//       "position": "Worker",
+//       "isWorking": true
+//     },
+//     {
+//       "name": "Gregor",
+//       "position": "Worker",
+//       "isWorking": true
+//     },
+//     {
+//       "name": "Casey",
+//       "position": "Worker",
+//       "isWorking": false
+//     },
+//     {
+//       "name": "Charles",
+//       "position": "Worker",
+//       "isWorking": true
+//     },
+//     {
+//       "name": "Richard",
+//       "position": "Worker",
+//       "isWorking": false
+//     },
+//     {
+//       "name": "Leo",
+//       "position": "Worker",
+//       "isWorking": true
+//     },
+//     {
+//       "name": "Leo",
+//       "position": "Manager",
+//       "isWorking": true
+//     },
+//     {
+//       "name": "Charlie",
+//       "position": "Manager",
+//       "isWorking": true
+//     },
+//   ]
  
-function index(arr) {
-    // result = []
+// function index(arr) {
+//     // result = []
 
-    for(i = 0; i < arr.length; i++) {
-        if(arr[i].position == "CEO") {
-            arr[i].index = 5
-        }
-        if(arr[i].position == "Manager") {
-            arr[i].index = 10
-        }
-        if(arr[i].position == "Worker") {
-            arr[i].index = 15
-        }
+//     for(i = 0; i < arr.length; i++) {
+//         if(arr[i].position == "CEO") {
+//             arr[i].index = 5
+//         }
+//         if(arr[i].position == "Manager") {
+//             arr[i].index = 10
+//         }
+//         if(arr[i].position == "Worker") {
+//             arr[i].index = 15
+//         }
 
-        // result[i] = arr[i]
-    }
+//         // result[i] = arr[i]
+//     }
     
-}
+// }
 
-index(workers)
+// index(workers)
   
 
-workers.sort((a, b) => a.name.localeCompare(b.name))
-workers.sort((a, b) => a.index - b.index)
-workers.sort((a, b) => b.isWorking - a.isWorking) 
+// workers.sort((a, b) => a.name.localeCompare(b.name))
+// workers.sort((a, b) => a.index - b.index)
+// workers.sort((a, b) => b.isWorking - a.isWorking) 
 
-console.log(workers)
+// console.log(workers)
+
+//-----------------------------------------------------------------------------------------------------
+
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const arr3 = [7, 8, 9];
+
+// console.log(arr3)
+
+let arrays = [[arr1], [arr2], [arr3]]
+
+function spread(arrays) {
+result = []
+k = 0
+for(let i = 0; i < arrays.length; i++) {
+    for(arrays[i]; i < arrays[i].length; i++) {
+        result[k] = arrays[i]
+        i++
+    }
+}
+return result
+}
+
+console.log(spread(arrays))
+
