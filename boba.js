@@ -8,8 +8,8 @@
 // .every +
 // .some + 
 // .sort +
-// Spread 
-// reduce
+// Spread + 
+// reduce +
 
 // var arr = ['boba', 'biba', 'kaka']
 
@@ -531,25 +531,138 @@
 
 //-----------------------------------------------------------------------------------------------------
 
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
-const arr3 = [7, 8, 9];
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
+// const arr3 = [...arr1, ...arr2]
 
 // console.log(arr3)
 
-let arrays = [[arr1], [arr2], [arr3]]
+// // let arrays = [[arr1], [arr2], [arr3]]
 
-function spread(arrays) {
-result = []
-k = 0
-for(let i = 0; i < arrays.length; i++) {
-    for(arrays[i]; i < arrays[i].length; i++) {
-        result[k] = arrays[i]
-        i++
-    }
-}
-return result
+// // function spread(arrays) {
+// // result = []
+// // k = 0
+// // for(let i = 0; i < arrays.length; i++) {
+// //     for(arrays[i]; i < arrays[i].length; i++) {
+// //         result[k] = arrays[i]
+// //         i++
+// //     }
+// // }
+// // return result
+// // }
+
+// // console.log(spread(arrays))
+
+//---------------------------------------------------------------------------------------------------------
+
+
+const numbers = [100, 5, 27, 23]
+
+// console.log(numbers.reduce(myFunc))
+
+// function myFunc(total, num) {
+//   return total + num;
+// }
+
+// function reduce(arr) {
+  
+//   total = arr[0]
+//   num = arr[1]
+  
+//   for(i = 1; i < arr.length; i++) {
+    
+    
+//     total = total + num
+
+//     num = arr[i++]
+//   }
+
+//   return total
+// }
+
+//not my solution >
+
+function reduce(array, callback, initial) {
+  let result = initial
+  
+  for (let i = 0; i < array.length; i++) {
+    result = callback(result, array[i])
+  }
+  
+  return result
 }
 
-console.log(spread(arrays))
+console.log(reduce(numbers, (acc, cur) => acc + cur, 0))
+
+//not my solution
+
+//-------------------------------------------------------------------------------------------------
+// TASK 1: Using reduce(), create a new array of people above 18 years old consisting of their full names
+// adultsFullNames(TASK_1) -> ['Igor Ivanov', 'Valentina Rykova']
+function adultsFullNames(persons) {
+  // return persons.reduce(...)
+}
+
+const TASK_1 = [
+  {
+    firstName: 'Vova',
+    lastName: 'Khmelnikov',
+    age: 15
+  },
+  {
+    firstName: 'Igor',
+    lastName: 'Ivanov',
+    age: 24
+  },
+  {
+    firstName: 'Ibrahim',
+    lastName: 'Musaev',
+    age: 12,
+  },
+  {
+    firstName: 'Valentina',
+    lastName: 'Rykova',
+    age: 34
+  }
+]
+
+// TASK 2: Using reduce(), return true if there is a transaction in USDT, otherwise, return false
+// hasUSDT(TASK_2_1) -> true
+// hasUSD(TASK_2_2) -> false
+function hasUSDT(transactions) {
+  // return transaction.reduce(...)
+}
+const TASK_2_1 = [
+  {
+    value: 15,
+    currency: 'BTC',
+  },
+  {
+    value: 549,
+    currency: 'RUB'
+  },
+  {
+    value: 12,
+    currecy: 'USDT'
+  },
+  {
+    value: 1089,
+    currency: 'RUB'
+  },
+]
+
+const TASK_2_2 = [
+  {
+    value: 150,
+    currency: 'TRX',
+  },
+  {
+    value: 20500,
+    currency: 'AMD'
+  },
+  {
+    value: 5,
+    currecy: 'TON'
+  }
+]
 
