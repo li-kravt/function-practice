@@ -555,53 +555,49 @@
 
 //---------------------------------------------------------------------------------------------------------
 
-
-const numbers = [100, 5, 27, 23]
-
 // console.log(numbers.reduce(myFunc))
 
 // function myFunc(total, num) {
-//   return total + num;
-// }
-
-// function reduce(arr) {
+  //   return total + num;
+  // }
   
-//   total = arr[0]
-//   num = arr[1]
+  // function reduce(arr) {
+    
+  //   total = arr[0]
+  //   num = arr[1]
   
-//   for(i = 1; i < arr.length; i++) {
+  //   for(i = 1; i < arr.length; i++) {
     
-    
-//     total = total + num
+  
+  //     total = total + num
+  
+  //     num = arr[i++]
+  //   }
+  
+  //   return total
+  // }
+  
+  //not my solution >
+  
+//   const numbers = [100, 5, 27, 23]
 
-//     num = arr[i++]
+// function reduce(array, callback, initial) {
+//   let result = initial
+  
+//   for (let i = 0; i < array.length; i++) {
+//     result = callback(result, array[i])
 //   }
-
-//   return total
+  
+//   return result
 // }
 
-//not my solution >
-
-function reduce(array, callback, initial) {
-  let result = initial
-  
-  for (let i = 0; i < array.length; i++) {
-    result = callback(result, array[i])
-  }
-  
-  return result
-}
-
-console.log(reduce(numbers, (acc, cur) => acc + cur, 0))
+// console.log(reduce(numbers, (acc, cur) => acc + cur, 0))
 
 //not my solution
 
 //-------------------------------------------------------------------------------------------------
 // TASK 1: Using reduce(), create a new array of people above 18 years old consisting of their full names
 // adultsFullNames(TASK_1) -> ['Igor Ivanov', 'Valentina Rykova']
-function adultsFullNames(persons) {
-  // return persons.reduce(...)
-}
 
 const TASK_1 = [
   {
@@ -625,6 +621,29 @@ const TASK_1 = [
     age: 34
   }
 ]
+
+function adultsFullNames(arr) {
+  let res = []
+
+  res = arr.reduce(
+    (acc, cur) => 
+   [...acc, cur.firstName + " " + cur.lastName]
+  , [])
+  
+  return res
+}
+
+// function callback(arr) {
+//   res = []
+//  res = arr.firstName + arr.lastName
+//  return res
+// }
+
+console.log(adultsFullNames(TASK_1))
+
+
+ //-----------------------------------------------------------------------------------------------------------
+
 
 // TASK 2: Using reduce(), return true if there is a transaction in USDT, otherwise, return false
 // hasUSDT(TASK_2_1) -> true
