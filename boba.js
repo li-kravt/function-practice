@@ -582,13 +582,13 @@
 //   const numbers = [100, 5, 27, 23]
 
 // function reduce(array, callback, initial) {
-//   let result = initial
+//   let acc = initial
   
 //   for (let i = 0; i < array.length; i++) {
-//     result = callback(result, array[i])
+//     acc = callback(acc, array[i])
 //   }
   
-//   return result
+//   return acc
 // }
 
 // console.log(reduce(numbers, (acc, cur) => acc + cur, 0))
@@ -598,6 +598,8 @@
 //-------------------------------------------------------------------------------------------------
 // TASK 1: Using reduce(), create a new array of people above 18 years old consisting of their full names
 // adultsFullNames(TASK_1) -> ['Igor Ivanov', 'Valentina Rykova']
+
+
 
 const TASK_1 = [
   {
@@ -622,66 +624,75 @@ const TASK_1 = [
   }
 ]
 
+
+
 function adultsFullNames(arr) {
   let res = []
-
-  res = arr.reduce(
-    (acc, cur) => 
-   [...acc, cur.firstName + " " + cur.lastName]
-  , [])
+  
+  res = arr.reduce((acc, cur) => {
+    if(cur.age >= 18) {
+      const fullName = cur.firstName + " " + cur.lastName
+      acc.push(fullName)}
+    return acc
+  }, [])
   
   return res
 }
 
-// function callback(arr) {
-//   res = []
-//  res = arr.firstName + arr.lastName
-//  return res
-// }
 
 console.log(adultsFullNames(TASK_1))
 
 
- //-----------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------
 
+// const TASK_2 = [60, 2, 4, 7, 18]
+
+// const result = TASK_2.reduce((acc, cur, index) => {
+  //   if(cur > 5) {
+    //     acc.push(cur)
+    //   }
+    //   return acc
+    // }, [])
+
+//--------------------------------------------------------------------------------------------------------
 
 // TASK 2: Using reduce(), return true if there is a transaction in USDT, otherwise, return false
 // hasUSDT(TASK_2_1) -> true
 // hasUSD(TASK_2_2) -> false
-function hasUSDT(transactions) {
+// function hasUSDT(transactions) {
   // return transaction.reduce(...)
-}
-const TASK_2_1 = [
-  {
-    value: 15,
-    currency: 'BTC',
-  },
-  {
-    value: 549,
-    currency: 'RUB'
-  },
-  {
-    value: 12,
-    currecy: 'USDT'
-  },
-  {
-    value: 1089,
-    currency: 'RUB'
-  },
-]
+// }
+// const TASK_2_1 = [
+//   {
+//     value: 15,
+//     currency: 'BTC',
+//   },
+//   {
+//     value: 549,
+//     currency: 'RUB'
+//   },
+//   {
+//     value: 12,
+//     currecy: 'USDT'
+//   },
+//   {
+//     value: 1089,
+//     currency: 'RUB'
+//   },
+// ]
 
-const TASK_2_2 = [
-  {
-    value: 150,
-    currency: 'TRX',
-  },
-  {
-    value: 20500,
-    currency: 'AMD'
-  },
-  {
-    value: 5,
-    currecy: 'TON'
-  }
-]
+// const TASK_2_2 = [
+//   {
+//     value: 150,
+//     currency: 'TRX',
+//   },
+//   {
+//     value: 20500,
+//     currency: 'AMD'
+//   },
+//   {
+//     value: 5,
+//     currecy: 'TON'
+//   }
+// ]
 
