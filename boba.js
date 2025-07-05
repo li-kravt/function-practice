@@ -601,46 +601,46 @@
 
 
 
-const TASK_1 = [
-  {
-    firstName: 'Vova',
-    lastName: 'Khmelnikov',
-    age: 15
-  },
-  {
-    firstName: 'Igor',
-    lastName: 'Ivanov',
-    age: 24
-  },
-  {
-    firstName: 'Ibrahim',
-    lastName: 'Musaev',
-    age: 12,
-  },
-  {
-    firstName: 'Valentina',
-    lastName: 'Rykova',
-    age: 34
-  }
-]
+// const TASK_1 = [
+//   {
+//     firstName: 'Vova',
+//     lastName: 'Khmelnikov',
+//     age: 15
+//   },
+//   {
+//     firstName: 'Igor',
+//     lastName: 'Ivanov',
+//     age: 24
+//   },
+//   {
+//     firstName: 'Ibrahim',
+//     lastName: 'Musaev',
+//     age: 12,
+//   },
+//   {
+//     firstName: 'Valentina',
+//     lastName: 'Rykova',
+//     age: 34
+//   }
+// ]
 
 
 
-function adultsFullNames(arr) {
-  let res = []
+// function adultsFullNames(arr) {
+//   let res = []
   
-  res = arr.reduce((acc, cur) => {
-    if(cur.age >= 18) {
-      const fullName = cur.firstName + " " + cur.lastName
-      acc.push(fullName)}
-    return acc
-  }, [])
+//   res = arr.reduce((acc, cur) => {
+//     if(cur.age >= 18) {
+//       const fullName = cur.firstName + " " + cur.lastName
+//       acc.push(fullName)}
+//     return acc
+//   }, [])
   
-  return res
-}
+//   return res
+// }
 
 
-console.log(adultsFullNames(TASK_1))
+// console.log(adultsFullNames(TASK_1))
 
 
 //-----------------------------------------------------------------------------------------------------------
@@ -660,26 +660,75 @@ console.log(adultsFullNames(TASK_1))
 // hasUSDT(TASK_2_1) -> true
 // hasUSD(TASK_2_2) -> false
 // function hasUSDT(transactions) {
-  // return transaction.reduce(...)
+//   return transaction.reduce(...)
 // }
-// const TASK_2_1 = [
-//   {
-//     value: 15,
-//     currency: 'BTC',
-//   },
-//   {
-//     value: 549,
-//     currency: 'RUB'
-//   },
-//   {
-//     value: 12,
-//     currecy: 'USDT'
-//   },
-//   {
-//     value: 1089,
-//     currency: 'RUB'
-//   },
-// ]
+
+const TASK_2_1 = [
+  {
+    value: 15,
+    currency: 'BTC',
+  },
+  {
+    value: 549,
+    currency: 'RUB'
+  },
+  {
+    value: 12,
+    currency: 'USDT'
+  },
+  {
+    value: 12,
+    currency: 'USDT'
+  },
+  {
+    value: 1089,
+    currency: 'RUB'
+  },
+]
+
+// first solution
+function hasUSDT(transactions) {
+
+  let res = false
+
+  res = transactions.reduce((acc, cur) => {
+  if(cur.currency == 'USDT') {
+    acc = true
+  }
+  
+   return acc
+
+  }, false) 
+
+  return res
+  
+}
+
+console.log(hasUSDT(TASK_2_1))
+
+//second solution
+function hasUSDTT(transactions) {
+
+  let result = []
+
+  result = transactions.reduce((acc, cur) => {
+  if(cur.currency == 'USDT') {
+    acc.push(cur.currency)}
+    return acc
+  }, [] ) 
+
+  if(result.length > 0) {
+    result = true
+  } else {
+    result = false
+  }
+
+  
+  return result
+  }
+
+console.log(hasUSDTT(TASK_2_1))
+
 
 // const TASK_2_2 = [
 //   {
