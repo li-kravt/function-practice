@@ -663,30 +663,88 @@
 //   return transaction.reduce(...)
 // }
 
-const TASK_2_1 = [
+// const TASK_2_1 = [
+//   {
+//     value: 15,
+//     currency: 'BTC',
+//   },
+//   {
+//     value: 549,
+//     currency: 'RUB'
+//   },
+//   {
+//     value: 12,
+//     currency: 'USDT'
+//   },
+//   {
+//     value: 12,
+//     currency: 'USDT'
+//   },
+//   {
+//     value: 1089,
+//     currency: 'RUB'
+//   },
+// ]
+
+// // first solution
+// function hasUSDT(transactions) {
+
+//   let res = false
+
+//   res = transactions.reduce((acc, cur) => {
+//   if(cur.currency == 'USDT') {
+//     acc = true
+//   }
+  
+//    return acc
+
+//   }, false) 
+
+//   return res
+  
+// }
+
+// console.log(hasUSDT(TASK_2_1))
+
+// //second solution
+// function hasUSDTT(transactions) {
+
+//   let result = []
+
+//   result = transactions.reduce((acc, cur) => {
+//   if(cur.currency == 'USDT') {
+//     acc.push(cur.currency)}
+//     return acc
+//   }, [] ) 
+
+//   if(result.length > 0) {
+//     result = true
+//   } else {
+//     result = false
+//   }
+
+  
+//   return result
+//   }
+
+// console.log(hasUSDTT(TASK_2_1))
+
+
+const TASK_2_2 = [
   {
-    value: 15,
-    currency: 'BTC',
+    value: 150,
+    currency: 'TRX',
   },
   {
-    value: 549,
-    currency: 'RUB'
+    value: 20500,
+    currency: 'AMD'
   },
   {
-    value: 12,
-    currency: 'USDT'
-  },
-  {
-    value: 12,
-    currency: 'USDT'
-  },
-  {
-    value: 1089,
-    currency: 'RUB'
-  },
+    value: 5,
+    currency: 'TON'
+  }
 ]
 
-// first solution
 function hasUSDT(transactions) {
 
   let res = false
@@ -701,12 +759,10 @@ function hasUSDT(transactions) {
   }, false) 
 
   return res
-  
 }
 
-console.log(hasUSDT(TASK_2_1))
+console.log(hasUSDT(TASK_2_2))
 
-//second solution
 function hasUSDTT(transactions) {
 
   let result = []
@@ -727,21 +783,4 @@ function hasUSDTT(transactions) {
   return result
   }
 
-console.log(hasUSDTT(TASK_2_1))
-
-
-// const TASK_2_2 = [
-//   {
-//     value: 150,
-//     currency: 'TRX',
-//   },
-//   {
-//     value: 20500,
-//     currency: 'AMD'
-//   },
-//   {
-//     value: 5,
-//     currecy: 'TON'
-//   }
-// ]
-
+  console.log(hasUSDTT(TASK_2_2))
