@@ -730,57 +730,75 @@
 // console.log(hasUSDTT(TASK_2_1))
 
 
-const TASK_2_2 = [
-  {
-    value: 150,
-    currency: 'TRX',
-  },
-  {
-    value: 20500,
-    currency: 'AMD'
-  },
-  {
-    value: 5,
-    currency: 'TON'
-  }
-]
+// const TASK_2_2 = [
+//   {
+//     value: 150,
+//     currency: 'TRX',
+//   },
+//   {
+//     value: 20500,
+//     currency: 'AMD'
+//   },
+//   {
+//     value: 5,
+//     currency: 'TON'
+//   }
+// ]
 
-function hasUSDT(transactions) {
+// function hasUSDT(transactions) {
 
-  let res = false
+//   let res = false
 
-  res = transactions.reduce((acc, cur) => {
-  if(cur.currency == 'USDT') {
-    acc = true
-  }
+//   res = transactions.reduce((acc, cur) => {
+//   if(cur.currency == 'USDT') {
+//     acc = true
+//   }
   
-   return acc
+//    return acc
 
-  }, false) 
+//   }, false) 
 
-  return res
+//   return res
+// }
+
+// console.log(hasUSDT(TASK_2_2))
+
+// function hasUSDTT(transactions) {
+
+//   let result = []
+
+//   result = transactions.reduce((acc, cur) => {
+//   if(cur.currency == 'USDT') {
+//     acc.push(cur.currency)}
+//     return acc
+//   }, [] ) 
+
+//   if(result.length > 0) {
+//     result = true
+//   } else {
+//     result = false
+//   }
+
+  
+//   return result
+//   }
+
+//   console.log(hasUSDTT(TASK_2_2))
+
+//------------------------------------------------------------------------------------------------------
+class Animal {
+  constructor(animal, sound) {
+  this.name = animal
+  this.sound = sound
+  this.speak()
 }
 
-console.log(hasUSDT(TASK_2_2))
+speak() {
+  console.log(`${this.name} say ${this.sound}!`)
+}
+}
 
-function hasUSDTT(transactions) {
 
-  let result = []
+const dog = new Animal("Dog", "gav")
 
-  result = transactions.reduce((acc, cur) => {
-  if(cur.currency == 'USDT') {
-    acc.push(cur.currency)}
-    return acc
-  }, [] ) 
-
-  if(result.length > 0) {
-    result = true
-  } else {
-    result = false
-  }
-
-  
-  return result
-  }
-
-  console.log(hasUSDTT(TASK_2_2))
+console.log(dog)
